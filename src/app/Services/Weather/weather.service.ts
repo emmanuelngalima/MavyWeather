@@ -14,7 +14,6 @@ export class WeatherService {
 
   getCurrentWeather():Observable<CurrentForecast> {
     let params = new HttpParams().append('q', "Dublin,CA");
-    console.log(params);
     return this.http.get<CurrentForecast>(this.baseUrl, {params}); 
   }
 

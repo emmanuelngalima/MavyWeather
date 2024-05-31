@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+import {MatCardModule} from '@angular/material/card'
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { WeatherViewComponent } from './Components/WeatherView/weather-view/weather-view.component';
@@ -14,6 +14,7 @@ import { WeatherHttpInterceptor } from './Services/Interceptors/weather-http-int
   ],
   imports: [
     BrowserModule,
+    MatCardModule,
     HttpClientModule,
     AppRoutingModule
   ],

@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This makes sure the container takes up the full height of the screen */
+  }
+  
+.mat-card {
+    width: 50%; /* Adjust this to set the width of the card */
+    height: 50%; /* Adjust this to set the height of the card */
+    box-sizing: border-box;
+  }
+  
