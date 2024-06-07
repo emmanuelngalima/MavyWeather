@@ -1,6 +1,14 @@
-<div class="container">
-    <mat-card class="mat-card">
-        <mat-card-title>City: {{city}}</mat-card-title>
-    </mat-card>
-</div>
-
+<!-- HTML template -->
+<mat-card class="weather-card">
+    <mat-card-header>
+      <div class="city-state">{{city}}</div>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="temperature">72°F</div>
+      <div class="weather-icon">
+        <img src="{{weatherIcon}}">
+      </div>
+      <div class="current-weather">{{description}}</div>
+    </mat-card-content>
+  </mat-card>
+  

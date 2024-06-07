@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrentForecast } from '@app/Models/current-forecast.model';
+import { FutureForecast } from '@app/Models/future-forcecast.model';
 import { WeatherService } from '@app/Services/Weather/weather.service';
-import { map } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-weather-view',
@@ -13,28 +13,30 @@ export class WeatherViewComponent implements OnInit {
   state:string ="";
   temperature: number = 0;
   weatherIcon: string = "";
-
-
-
+  description: string ="";
 
 
   constructor(private weatherService: WeatherService) {
-
   }
 
   ngOnInit() {
-    this.getCurrentWeather();
+    this.getforecastWeather();
   }
 
 
-  getCurrentWeather() {
-    this.weatherService.getCurrentWeather().subscribe(currentWeather => {
-      console.log(currentWeather);
-      this.city = currentWeather.location.name;
-      this.state = currentWeather.location.region;
-      this.temperature = currentWeather.current.temp_f;
-      this.weatherIcon = currentWeather.current.condition.icon;
+  getforecastWeather() {
+    this.weatherService.getUpcomingDaysForecast().subscribe(futureForecast => {
+      this.setForecast(futureForecast);
+      console.log(futureForecast)
     })
+  }
+
+  setForecast(forecastWeather:FutureForecast) {
+    this.city = forecastWeather.location.name;
+    this.state = forecastWeather.location.region;
+    this.temperature = forecastWeather.current.temp_f;
+    this.weatherIcon = forecastWeather.current.condition.icon;
+    this.description = forecastWeather.current.condition.text
   }
 
 }

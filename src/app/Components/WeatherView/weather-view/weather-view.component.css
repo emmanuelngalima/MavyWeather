@@ -1,13 +1,46 @@
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* This makes sure the container takes up the full height of the screen */
-  }
+/* CSS styles */
+.weather-card {
+  width: 50%;
+  height: 50%;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(23, 112, 207, 0.1);
+  /* Add vibrant colors */
+  background-image: linear-gradient(to bottom, #0048ff, #0048ff);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.city-state {
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
   
-.mat-card {
-    width: 50%; /* Adjust this to set the width of the card */
-    height: 50%; /* Adjust this to set the height of the card */
-    box-sizing: border-box;
-  }
-  
+}
+
+.current-weather {
+  font-size: 14px;
+  color: #fff;
+  display:flex;
+  justify-content: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.temperature {
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  padding: 16px;
+  justify-content: center;
+}
+
+.weather-icon {
+  font-size: 36px;
+  color: #fff; /* Customize the color based on weather conditions */
+  display: flex;
+  justify-content: center;
+}
